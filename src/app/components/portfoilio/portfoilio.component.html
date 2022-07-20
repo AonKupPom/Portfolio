@@ -115,9 +115,11 @@
           <span class="keyboard-text">del</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keyred">
+      <button type="button" class="keychron keycaps keyred" (click)="computerStart = !computerStart" (click)="prompt = 'prompt'">
         <div class="keycaps-inner-red">
-          <span class="keyboard-text">ScrLc</span>
+          <span class="keyboard-text">
+            <i class="fa-solid fa-display"></i>
+          </span>
         </div>
       </button>
     </div>

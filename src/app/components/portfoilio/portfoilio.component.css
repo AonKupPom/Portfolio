@@ -8,6 +8,11 @@
   src: local("universe57"), url('../../../assets/fonts/univers57/Univers57CondensedRegular.otf') format("truetype");
 }
 
+@font-face {
+  font-family: "ShadeBlue";
+  src: local("ShadeBlue"), url('../../../assets/fonts/ShadeBlue/ShadeBlue.ttf') format("truetype");
+}
+
 @keyframes flicker {
   0% {
     background-color: #222;
