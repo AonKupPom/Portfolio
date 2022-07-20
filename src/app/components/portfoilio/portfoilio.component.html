@@ -1,0 +1,474 @@
+<div class="container">
+  <div class="macintosh" aria-label="1984 Macintosh illustration">
+    <div class="monitor">
+      <div class="monitor-inner">
+        <div class="screen-cutout">
+          <div class="screen">
+            <div *ngIf="!computerStart" class="fadeIn"></div>
+            <div *ngIf="computerStart" class="screens">
+              <div class="terminal">
+                <div class="outputContainer">
+                </div>
+                <span *ngFor="let item of commandInput" class="{{prompt}} currentLine">{{item}}<br></span>
+                <div class="currentLine">
+                  <span class="{{prompt}}">$</span>
+                  <div class="inputContainer">
+                    <input #command class="input" spellcheck="false" type="text" (keyup.enter)="onEnter($event.target)"
+                      (keyup.enter)="command.value = ''" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="logo">
+          <!-- <p>🏳️‍🌈</p> -->
+        </div>
+        <div class="opening">
+          <div class="opening-inner">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="inset"></div>
+      <div class="cable-container">
+        <div class="cable-hole" (click)="computerStart = !computerStart" (click)="prompt = 'prompt'"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="keyboard" ontouchstart="">
+    <div class="row">
+      <button type="button" class="keychron keycaps keyred">
+        <div class="keycaps-inner-red">
+          <span class="keyboard-text">hello</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F1</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F2</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F3</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F4</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">F5</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">F6</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">F7</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">F8</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">F9</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F10</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F11</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F12</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">PrtSc</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">del</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keyred">
+        <div class="keycaps-inner-red">
+          <span class="keyboard-text">ScrLc</span>
+        </div>
+      </button>
+    </div>
+    <div class="row">
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">~<br>`</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">!&emsp;+<br>1&emsp;า</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">@&emsp;๑<br>2&emsp;/</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">#&emsp;๒<br>3&emsp;-</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">$&emsp;๓<br>4&emsp;ภ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">%&emsp;๔<br>5&emsp;ถ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">∧&emsp;บ<br>6&emsp;า</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">&&emsp;฿<br>7&emsp;•</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">*&emsp;๕<br>8&emsp;ค</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">(&emsp;๖<br>9&emsp;ต</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">)&emsp;๗<br>0&emsp;จ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">─&emsp;๘<br>-&emsp;ข</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">+&emsp;๙<br>=&emsp;ช</span>
+        </div>
+      </button>
+      <button type="button" class="keychron backspace backspace-keygray">
+        <div class="backspace-inner-gray">
+          <span class="keyboard-text">backspace</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">pgup</span>
+        </div>
+      </button>
+    </div>
+    <div class="row">
+      <button type="button" class="keychron tab tab-keygray">
+        <div class="tab-inner-gray">
+          <span class="keyboard-text">tab</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">Q&emsp;O<br>ๆ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">W&emsp;"<br>ไ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">E&emsp;ฎ<br>ำ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">R&emsp;ฑ<br>พ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">T&emsp;ธ<br>ะ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text-tone-mark">Y&emsp;O<br class="tone-mark"> ั </span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text-tone-mark">U&emsp;๗<br class="tone-mark">  ี </span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">I&emsp;ณ<br>ร</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">O&emsp;ฯ<br>น</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">P&emsp;ญ<br>ย</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">&#123;&emsp;ฐ<br>[&emsp;บ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">&#125;&emsp;❟<br>]&emsp;ล</span>
+        </div>
+      </button>
+      <button type="button" class="keychron tab tab-keygray">
+        <div class="tab-inner-gray">
+          <span class="keyboard-text">|&emsp;ฅ<br>\&emsp;ฃ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">pgdn</span>
+        </div>
+      </button>
+    </div>
+    <div class="row">
+      <button type="button" class="keychron capslock capslock-keygray">
+        <div class="capslock-inner-gray">
+          <span class="keyboard-text">caps lock</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">A&emsp;ฤ<br>ฟ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">S&emsp;ฆ<br>ห</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">D&emsp;ฏ<br>ก</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">F&emsp;โ<br>ด</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">G&emsp;ฌ<br>เ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text-tone-mark">H&emsp;๘<br class="tone-mark"> ้ </span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text-tone-mark">J&emsp;+<br class="tone-mark"> ่ </span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">K&emsp;ษ<br>า</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">L&emsp;ศ<br>ส</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">:&emsp;ซ<br>;&emsp;ว</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">:&emsp;•<br>;&emsp;ง</span>
+        </div>
+      </button>
+      <button type="button" class="keychron enter enter-keygray">
+        <div class="enter-inner-gray">
+          <span class="keyboard-text">enter</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">home</span>
+        </div>
+      </button>
+    </div>
+    <div class="row">
+      <button type="button" class="keychron lshift lshift-keygray">
+        <div class="lshift-inner-gray">
+          <span class="keyboard-text">shift</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">Z&emsp;(<br>ผ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">X&emsp;)<br>ป</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">C&emsp;ฉ<br>แ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">V&emsp;ฮ<br>อ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text-tone-mark">B&emsp;•<br class="tone-mark">ิ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text-tone-mark">N&emsp;•<br class="tone-mark"> ื</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">M&emsp;?<br>ท</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">&lt;&emsp;ฒ<br>•&emsp;ม</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">&gt;&emsp;ฬ<br>•&emsp;ใ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">?&emsp;ฦ<br>/&emsp;ฝ</span>
+        </div>
+      </button>
+      <button type="button" class="keychron rshift rshift-keygray">
+        <div class="rshift-inner-gray">
+          <span class="keyboard-text">shift</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">∧</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">end</span>
+        </div>
+      </button>
+    </div>
+    <div class="row">
+      <button type="button" class="keychron ctrl ctrl-keygray">
+        <div class="ctrl-inner-gray">
+          <span class="keyboard-text">ctrl</span>
+        </div>
+      </button>
+      <button type="button" class="keychron ctrl ctrl-keygray">
+        <div class="ctrl-inner-gray">
+          <span class="keyboard-text">windows</span>
+        </div>
+      </button>
+      <button type="button" class="keychron ctrl ctrl-keygray">
+        <div class="ctrl-inner-gray">
+          <span class="keyboard-text">alt</span>
+        </div>
+      </button>
+      <button type="button" class="keychron space space-keywhite">
+        <div class="space-inner-white"></div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">alt</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">fn</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keygray">
+        <div class="keycaps-inner-gray">
+          <span class="keyboard-text">ctrl</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">&lt;</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">v</span>
+        </div>
+      </button>
+      <button type="button" class="keychron keycaps keywhite">
+        <div class="keycaps-inner-white">
+          <span class="keyboard-text">&gt;</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+</div>
