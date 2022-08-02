@@ -1,5 +1,19 @@
-<div class="container">
-  <div class="macintosh" aria-label="1984 Macintosh illustration">
+<div class="container mb-10 px-5">
+  <div class="introduce row">
+    <div class="col-md-12 hi mt-5">
+      ยินดีต้อนรับผู้เยี่ยมชมทุกท่าน ผมชื่อ
+    </div>
+    <div class="col-md-12 title">
+      ศาศวัต ทรัพย์สินโยธิน<br>
+      ผมเป็น Full Stack Developer.
+    </div>
+    <div class="col-md-6 description">
+      ท่านสามารถเยี่ยมชมและทำความรู้จักกับผมได้ผ่านข้อมูลต่างๆที่ระบุไว้ใน Portfolio นี้
+      โดยผมได้เตรียมคอมพิวเตอร์และคีย์บอร์ดไว้ด้านล่างเพื่อให้ท่านสามารถใช้เป็นทางลัดในการดูข้อมูลที่ท่านสนใจได้สะดวกมากยิ่งขึ้น
+    </div>
+  </div>
+  <!-- <div #computer class="computer d-flex justify-content-center mt-10" aria-label="1984 Macintosh illustration"
+    id="computer">
     <div class="monitor">
       <div class="monitor-inner">
         <div class="screen-cutout">
@@ -13,8 +27,7 @@
                 <div class="currentLine">
                   <span class="{{prompt}}">$</span>
                   <div class="inputContainer">
-                    <input #command class="input" spellcheck="false" type="text" (keyup.enter)="onEnter($event.target)"
-                      (keyup.enter)="command.value = ''" />
+                    <input class="input" spellcheck="false" type="text" value="{{terminalInput}}" disabled />
                   </div>
                 </div>
               </div>
@@ -22,7 +35,6 @@
           </div>
         </div>
         <div class="logo">
-          <!-- <p>🏳️‍🌈</p> -->
         </div>
         <div class="opening">
           <div class="opening-inner">
@@ -32,445 +44,899 @@
     </div>
     <div class="foot">
       <div class="inset"></div>
-      <div class="cable-container">
-        <div class="cable-hole" (click)="computerStart = !computerStart" (click)="prompt = 'prompt'"></div>
+      <div class="switch-container" (click)="computerStart = !computerStart" (click)="prompt = 'prompt'">
+        <i *ngIf="computerStart" class="fa-solid fa-power-off fa-3x power-on"></i>
+        <i *ngIf="!computerStart" class="fa-solid fa-power-off fa-3x power-off"></i>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="keyboard" ontouchstart="">
+  <div #keyboard id="keyboard"></div>
+  <div class="keyboard mt-10" ontouchstart="">
     <div class="row">
-      <button type="button" class="keychron keycaps keyred">
-        <div class="keycaps-inner-red">
-          <span class="keyboard-text">hello</span>
+      <button type="button" id="Escape" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keyred">
+        <div id="Escape" class="keycaps-inner-red">
+          <span id="Escape" class="keyboard-text">hello.</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F1</span>
+      <button type="button" id="F1" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="F1" class="keycaps-inner-white">
+          <span id="F1" class="keyboard-text"><i class="bi bi-brightness-low fa-lg"></i><br>F1</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F2</span>
+      <button type="button" id="F2" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="F2" class="keycaps-inner-white">
+          <span id="F2" class="keyboard-text"><i class="bi bi-brightness-high fa-lg"></i><br>F2</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F3</span>
+      <button type="button" id="F3" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="F3" class="keycaps-inner-white">
+          <span id="F3" class="keyboard-text"><i class="bi bi-grid-3x2 fa-lg"></i><br>F3</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F4</span>
+      <button type="button" id="F4" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="F4" class="keycaps-inner-white">
+          <span id="F4" class="keyboard-text"><i class="bi bi-grid-3x2-gap fa-xl"></i><br>F4</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">F5</span>
+      <button type="button" id="F5" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="F5" class="keycaps-inner-gray">
+          <span id="F5" class="keyboard-text"><i class="bi bi-brightness-alt-low fa-xl"></i><br>F5</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">F6</span>
+      <button type="button" id="F6" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="F6" class="keycaps-inner-gray">
+          <span id="F6" class="keyboard-text"><i class="bi bi-brightness-alt-high fa-xl"></i><br>F6</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">F7</span>
+      <button type="button" id="F7" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="F7" class="keycaps-inner-gray">
+          <span id="F7" class="keyboard-text"><i class="bi bi-rewind fa-xl"></i><br>F7</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">F8</span>
+      <button type="button" id="F8" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="F8" class="keycaps-inner-gray">
+          <span id="F8" class="keyboard-text"><i class="bi bi-play fa-xl"></i><br>F8</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">F9</span>
+      <button type="button" id="F9" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="F9" class="keycaps-inner-gray">
+          <span id="F9" class="keyboard-text"><i class="bi bi-fast-forward fa-xl"></i><br>F9</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F10</span>
+      <button type="button" id="F10" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="F10" class="keycaps-inner-white">
+          <span id="F10" class="keyboard-text"><i class="bi bi-volume-off fa-xl"></i><br>F10</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F11</span>
+      <button type="button" id="F11" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="F11" class="keycaps-inner-white">
+          <span id="F11" class="keyboard-text"><i class="bi bi-volume-down fa-xl"></i><br>F11</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F12</span>
+      <button type="button" id="F12" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="F12" class="keycaps-inner-white">
+          <span id="F12" class="keyboard-text"><i class="bi bi-volume-up fa-xl"></i><br>F12</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">PrtSc</span>
+      <button type="button" id="crop" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="crop" class="keycaps-inner-gray">
+          <span id="crop" class="keyboard-text">
+            <i class="fa-solid fa-crop"></i>
+          </span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">del</span>
+      <button type="button" id="Delete" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="Delete" class="keycaps-inner-gray">
+          <span id="Delete" class="keyboard-text">del</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keyred" (click)="computerStart = !computerStart" (click)="prompt = 'prompt'">
-        <div class="keycaps-inner-red">
-          <span class="keyboard-text">
+      <button type="button" id="display" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keyred"
+        (click)="computerStart = !computerStart" (click)="prompt = 'prompt'">
+        <div id="display" class="keycaps-inner-red">
+          <span id="display" class="keyboard-text">
             <i class="fa-solid fa-display"></i>
           </span>
         </div>
       </button>
     </div>
     <div class="row">
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">~<br>`</span>
+      <button type="button" id="Backquote" name="~" value="`" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keygray">
+        <div id="Backquote" class="keycaps-inner-gray">
+          <span id="Backquote" class="keyboard-text">~&emsp;%<br>ヽ&emsp;─</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">!&emsp;+<br>1&emsp;า</span>
+      <button type="button" id="Digit1" name="!" value="1" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit1" class="keycaps-inner-white">
+          <span id="Digit1" class="keyboard-text">!&emsp;+<br>1&emsp;า</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">@&emsp;๑<br>2&emsp;/</span>
+      <button type="button" id="Digit2" name="@" value="2" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit2" class="keycaps-inner-white">
+          <span id="Digit2" class="keyboard-text">@&emsp;๑<br>2&emsp;/</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">#&emsp;๒<br>3&emsp;-</span>
+      <button type="button" id="Digit3" name="#" value="3" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit3" class="keycaps-inner-white">
+          <span id="Digit3" class="keyboard-text">#&emsp;๒<br>3&emsp;-</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">$&emsp;๓<br>4&emsp;ภ</span>
+      <button type="button" id="Digit4" name="$" value="4" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit4" class="keycaps-inner-white">
+          <span id="Digit4" class="keyboard-text">$&emsp;๓<br>4&emsp;ภ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">%&emsp;๔<br>5&emsp;ถ</span>
+      <button type="button" id="Digit5" name="%" value="5" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit5" class="keycaps-inner-white">
+          <span id="Digit5" class="keyboard-text">%&emsp;๔<br>5&emsp;ถ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">∧&emsp;บ<br>6&emsp;า</span>
+      <button type="button" id="Digit6" name="^" value="6" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit6" class="keycaps-inner-white">
+          <span id="Digit6" class="keyboard-text">∧&emsp;บ<br>6&emsp;า</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">&&emsp;฿<br>7&emsp;•</span>
+      <button type="button" id="Digit7" name="&" value="7" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit7" class="keycaps-inner-white">
+          <span id="Digit7" class="keyboard-text">&&emsp;฿<br>7&emsp;&nbsp; ึ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">*&emsp;๕<br>8&emsp;ค</span>
+      <button type="button" id="Digit8" name="*" value="8" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit8" class="keycaps-inner-white">
+          <span id="Digit8" class="keyboard-text">*&emsp;๕<br>8&emsp;ค</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">(&emsp;๖<br>9&emsp;ต</span>
+      <button type="button" id="Digit9" name="(" value="9" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit9" class="keycaps-inner-white">
+          <span id="Digit9" class="keyboard-text">(&emsp;๖<br>9&emsp;ต</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">)&emsp;๗<br>0&emsp;จ</span>
+      <button type="button" id="Digit0" name=")" value="0" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Digit0" class="keycaps-inner-white">
+          <span id="Digit0" class="keyboard-text">)&emsp;๗<br>0&emsp;จ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">─&emsp;๘<br>-&emsp;ข</span>
+      <button type="button" id="Minus" name="_" value="-" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Minus" class="keycaps-inner-white">
+          <span id="Minus" class="keyboard-text">─&emsp;๘<br>-&emsp;ข</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">+&emsp;๙<br>=&emsp;ช</span>
+      <button type="button" id="Equal" name="+" value="=" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Equal" class="keycaps-inner-white">
+          <span id="Equal" class="keyboard-text">+&emsp;๙<br>=&emsp;ช</span>
         </div>
       </button>
-      <button type="button" class="keychron backspace backspace-keygray">
-        <div class="backspace-inner-gray">
-          <span class="keyboard-text">backspace</span>
+      <button type="button" id="Backspace" (click)="KeyboardOnclick($event.target)"
+        class="keychron backspace backspace-keygray">
+        <div id="Backspace" class="backspace-inner-gray">
+          <span id="Backspace" class="keyboard-text"><i class="fa-solid fa-left-long fa-xl"></i>&nbsp;backspace</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">pgup</span>
-        </div>
-      </button>
-    </div>
-    <div class="row">
-      <button type="button" class="keychron tab tab-keygray">
-        <div class="tab-inner-gray">
-          <span class="keyboard-text">tab</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">Q&emsp;O<br>ๆ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">W&emsp;"<br>ไ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">E&emsp;ฎ<br>ำ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">R&emsp;ฑ<br>พ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">T&emsp;ธ<br>ะ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text-tone-mark">Y&emsp;O<br class="tone-mark"> ั </span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text-tone-mark">U&emsp;๗<br class="tone-mark">  ี </span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">I&emsp;ณ<br>ร</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">O&emsp;ฯ<br>น</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">P&emsp;ญ<br>ย</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">&#123;&emsp;ฐ<br>[&emsp;บ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">&#125;&emsp;❟<br>]&emsp;ล</span>
-        </div>
-      </button>
-      <button type="button" class="keychron tab tab-keygray">
-        <div class="tab-inner-gray">
-          <span class="keyboard-text">|&emsp;ฅ<br>\&emsp;ฃ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">pgdn</span>
+      <button type="button" id="PageUp" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="PageUp" class="keycaps-inner-gray">
+          <span id="PageUp" class="keyboard-text">pgup</span>
         </div>
       </button>
     </div>
     <div class="row">
-      <button type="button" class="keychron capslock capslock-keygray">
-        <div class="capslock-inner-gray">
-          <span class="keyboard-text">caps lock</span>
+      <button type="button" id="Tab" name="  " value="  " (click)="KeyboardOnclick($event.target)"
+        class="keychron tab tab-keygray">
+        <div id="Tab" class="tab-inner-gray">
+          <span id="Tab" class="keyboard-text">tab</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">A&emsp;ฤ<br>ฟ</span>
+      <button type="button" id="KeyQ" name="Q" value="q" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyQ" class="keycaps-inner-white">
+          <span id="KeyQ" class="keyboard-text">Q&emsp;O<br>ๆ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">S&emsp;ฆ<br>ห</span>
+      <button type="button" id="KeyW" name="W" value="w" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyW" class="keycaps-inner-white">
+          <span id="KeyW" class="keyboard-text">W&emsp;"<br>ไ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">D&emsp;ฏ<br>ก</span>
+      <button type="button" id="KeyE" name="E" value="e" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyE" class="keycaps-inner-white">
+          <span id="KeyE" class="keyboard-text">E&emsp;ฎ<br>ำ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">F&emsp;โ<br>ด</span>
+      <button type="button" id="KeyR" name="R" value="r" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyR" class="keycaps-inner-white">
+          <span id="KeyR" class="keyboard-text">R&emsp;ฑ<br>พ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">G&emsp;ฌ<br>เ</span>
+      <button type="button" id="KeyT" name="T" value="t" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyT" class="keycaps-inner-white">
+          <span id="KeyT" class="keyboard-text">T&emsp;ธ<br>ะ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text-tone-mark">H&emsp;๘<br class="tone-mark"> ้ </span>
+      <button type="button" id="KeyY" name="Y" value="y" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyY" class="keycaps-inner-white">
+          <span id="KeyY" class="keyboard-text-tone-mark">Y&emsp;O<br class="tone-mark"> ั </span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text-tone-mark">J&emsp;+<br class="tone-mark"> ่ </span>
+      <button type="button" id="KeyU" name="U" value="u" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyU" class="keycaps-inner-white">
+          <span id="KeyU" class="keyboard-text-tone-mark">U&emsp;๗<br class="tone-mark"> ี </span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">K&emsp;ษ<br>า</span>
+      <button type="button" id="KeyI" name="I" value="i" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyI" class="keycaps-inner-white">
+          <span id="KeyI" class="keyboard-text">I&emsp;ณ<br>ร</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">L&emsp;ศ<br>ส</span>
+      <button type="button" id="KeyO" name="O" value="o" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyO" class="keycaps-inner-white">
+          <span id="KeyO" class="keyboard-text">O&emsp;ฯ<br>น</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">:&emsp;ซ<br>;&emsp;ว</span>
+      <button type="button" id="KeyP" name="P" value="p" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyP" class="keycaps-inner-white">
+          <span id="KeyP" class="keyboard-text">P&emsp;ญ<br>ย</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">:&emsp;•<br>;&emsp;ง</span>
+      <button type="button" id="BracketLeft" name="{" value="[" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="BracketLeft" class="keycaps-inner-white">
+          <span id="BracketLeft" class="keyboard-text">&#123;&emsp;ฐ<br>[&emsp;บ</span>
         </div>
       </button>
-      <button type="button" class="keychron enter enter-keygray">
-        <div class="enter-inner-gray">
-          <span class="keyboard-text">enter</span>
+      <button type="button" id="BracketRight" name="}" value="]" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="BracketRight" class="keycaps-inner-white">
+          <span id="BracketRight" class="keyboard-text">&#125;&emsp;❟<br>]&emsp;ล</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">home</span>
+      <button type="button" id="Backslash" name="|" value="\" (click)="KeyboardOnclick($event.target)"
+        class="keychron tab tab-keygray">
+        <div id="Backslash" class="tab-inner-gray">
+          <span id="Backslash" class="keyboard-text">\&emsp;ฅ<br>ヽ&emsp;ฃ</span>
         </div>
       </button>
-    </div>
-    <div class="row">
-      <button type="button" class="keychron lshift lshift-keygray">
-        <div class="lshift-inner-gray">
-          <span class="keyboard-text">shift</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">Z&emsp;(<br>ผ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">X&emsp;)<br>ป</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">C&emsp;ฉ<br>แ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">V&emsp;ฮ<br>อ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text-tone-mark">B&emsp;•<br class="tone-mark">ิ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text-tone-mark">N&emsp;•<br class="tone-mark"> ื</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">M&emsp;?<br>ท</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">&lt;&emsp;ฒ<br>•&emsp;ม</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">&gt;&emsp;ฬ<br>•&emsp;ใ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">?&emsp;ฦ<br>/&emsp;ฝ</span>
-        </div>
-      </button>
-      <button type="button" class="keychron rshift rshift-keygray">
-        <div class="rshift-inner-gray">
-          <span class="keyboard-text">shift</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">∧</span>
-        </div>
-      </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">end</span>
+      <button type="button" id="PageDown" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="PageDown" class="keycaps-inner-gray">
+          <span id="PageDown" class="keyboard-text">pgdn</span>
         </div>
       </button>
     </div>
     <div class="row">
-      <button type="button" class="keychron ctrl ctrl-keygray">
-        <div class="ctrl-inner-gray">
-          <span class="keyboard-text">ctrl</span>
+      <button type="button" id="CapsLock" (click)="KeyboardOnclick($event.target)"
+        class="keychron capslock capslock-keygray">
+        <div id="CapsLock" class="capslock-inner-gray">
+          <span id="CapsLock" class="keyboard-text">caps lock</span>
         </div>
       </button>
-      <button type="button" class="keychron ctrl ctrl-keygray">
-        <div class="ctrl-inner-gray">
-          <span class="keyboard-text">windows</span>
+      <button type="button" id="KeyA" name="A" value="a" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyA" class="keycaps-inner-white">
+          <span id="KeyA" class="keyboard-text">A&emsp;ฤ<br>ฟ</span>
         </div>
       </button>
-      <button type="button" class="keychron ctrl ctrl-keygray">
-        <div class="ctrl-inner-gray">
-          <span class="keyboard-text">alt</span>
+      <button type="button" id="KeyS" name="S" value="s" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyS" class="keycaps-inner-white">
+          <span id="KeyS" class="keyboard-text">S&emsp;ฆ<br>ห</span>
         </div>
       </button>
-      <button type="button" class="keychron space space-keywhite">
-        <div class="space-inner-white"></div>
-      </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">alt</span>
+      <button type="button" id="KeyD" name="D" value="d" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyD" class="keycaps-inner-white">
+          <span id="KeyD" class="keyboard-text">D&emsp;ฏ<br>ก</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">fn</span>
+      <button type="button" id="KeyF" name="F" value="f" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyF" class="keycaps-inner-white">
+          <span id="KeyF" class="keyboard-text">F&emsp;โ<br>ด</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keygray">
-        <div class="keycaps-inner-gray">
-          <span class="keyboard-text">ctrl</span>
+      <button type="button" id="KeyG" name="G" value="g" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyG" class="keycaps-inner-white">
+          <span id="KeyG" class="keyboard-text">G&emsp;ฌ<br>เ</span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">&lt;</span>
+      <button type="button" id="KeyH" name="H" value="h" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyH" class="keycaps-inner-white">
+          <span id="KeyH" class="keyboard-text-tone-mark">H&emsp;๘<br class="tone-mark"> ้ </span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">v</span>
+      <button type="button" id="KeyJ" name="J" value="j" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyJ" class="keycaps-inner-white">
+          <span id="KeyJ" class="keyboard-text-tone-mark">J&emsp;+<br class="tone-mark"> ่ </span>
         </div>
       </button>
-      <button type="button" class="keychron keycaps keywhite">
-        <div class="keycaps-inner-white">
-          <span class="keyboard-text">&gt;</span>
+      <button type="button" id="KeyK" name="K" value="k" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyK" class="keycaps-inner-white">
+          <span id="KeyK" class="keyboard-text">K&emsp;ษ<br>า</span>
+        </div>
+      </button>
+      <button type="button" id="KeyL" name="L" value="l" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyL" class="keycaps-inner-white">
+          <span id="KeyL" class="keyboard-text">L&emsp;ศ<br>ส</span>
+        </div>
+      </button>
+      <button type="button" id="Semicolon" name=":" value=";" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Semicolon" class="keycaps-inner-white">
+          <span id="Semicolon" class="keyboard-text">:&emsp;ซ<br>;&emsp;ว</span>
+        </div>
+      </button>
+      <button type="button" id="Quote" name="&quot;" value="'" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Quote" class="keycaps-inner-white">
+          <span id="Quote" class="keyboard-text">″&emsp;·<br>′&emsp;ง</span>
+        </div>
+      </button>
+      <button type="button" id="Enter" (click)="KeyboardOnclick($event.target)" class="keychron enter enter-keygray">
+        <div id="Enter" class="enter-inner-gray">
+          <span id="Enter" class="keyboard-text"><i
+              class="fa-solid fa-turn-down fa-rotate-90 fa-xl"></i>&emsp;enter</span>
+        </div>
+      </button>
+      <button type="button" id="Home" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="Home" class="keycaps-inner-gray">
+          <span id="Home" class="keyboard-text">home</span>
         </div>
       </button>
     </div>
+    <div class="row">
+      <button type="button" id="ShiftLeft" (click)="KeyboardOnclick($event.target)"
+        class="keychron lshift lshift-keygray">
+        <div id="ShiftLeft" class="lshift-inner-gray">
+          <span id="ShiftLeft" class="keyboard-text">shift</span>
+        </div>
+      </button>
+      <button type="button" id="KeyZ" name="Z" value="z" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyZ" class="keycaps-inner-white">
+          <span id="KeyZ" class="keyboard-text">Z&emsp;(<br>ผ</span>
+        </div>
+      </button>
+      <button type="button" id="KeyX" name="X" value="x" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyX" class="keycaps-inner-white">
+          <span id="KeyX" class="keyboard-text">X&emsp;)<br>ป</span>
+        </div>
+      </button>
+      <button type="button" id="KeyC" name="C" value="c" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyC" class="keycaps-inner-white">
+          <span id="KeyC" class="keyboard-text">C&emsp;ฉ<br>แ</span>
+        </div>
+      </button>
+      <button type="button" id="KeyV" name="V" value="v" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyV" class="keycaps-inner-white">
+          <span id="KeyV" class="keyboard-text">V&emsp;ฮ<br>อ</span>
+        </div>
+      </button>
+      <button type="button" id="KeyB" name="B" value="b" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyB" class="keycaps-inner-white">
+          <span id="KeyB" class="keyboard-text-tone-mark">B&emsp;·<br class="tone-mark">ิ</span>
+        </div>
+      </button>
+      <button type="button" id="KeyN" name="N" value="n" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyN" class="keycaps-inner-white">
+          <span id="KeyN" class="keyboard-text-tone-mark">N&emsp;·<br class="tone-mark"> ื</span>
+        </div>
+      </button>
+      <button type="button" id="KeyM" name="M" value="m" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="KeyM" class="keycaps-inner-white">
+          <span id="KeyM" class="keyboard-text">M&emsp;?<br>ท</span>
+        </div>
+      </button>
+      <button type="button" id="Comma" name="&lt;" value="," (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Comma" class="keycaps-inner-white">
+          <span id="Comma" class="keyboard-text">&lt;&emsp;ฒ<br>′&nbsp;&emsp;ม</span>
+        </div>
+      </button>
+      <button type="button" id="Period" name="&gt;" value="." (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Period" class="keycaps-inner-white">
+          <span id="Period" class="keyboard-text">&gt;&emsp;ฬ<br>·&emsp;ใ</span>
+        </div>
+      </button>
+      <button type="button" id="Slash" name="?" value="/" (click)="KeyboardOnclick($event.target)"
+        class="keychron keycaps keywhite">
+        <div id="Slash" class="keycaps-inner-white">
+          <span id="Slash" class="keyboard-text">?&emsp;ฦ<br>/&emsp;ฝ</span>
+        </div>
+      </button>
+      <button type="button" id="ShiftRight" (click)="KeyboardOnclick($event.target)"
+        class="keychron rshift rshift-keygray">
+        <div id="ShiftRight" class="rshift-inner-gray">
+          <span id="ShiftRight" class="keyboard-text">shift</span>
+        </div>
+      </button>
+      <button type="button" id="ArrowUp" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="ArrowUp" class="keycaps-inner-white">
+          <span id="ArrowUp" class="keyboard-text">ᐱ</span>
+        </div>
+      </button>
+      <button type="button" id="End" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="End" class="keycaps-inner-gray">
+          <span id="End" class="keyboard-text">end</span>
+        </div>
+      </button>
+    </div>
+    <div class="row">
+      <button type="button" id="ControlLeft" (click)="KeyboardOnclick($event.target)"
+        class="keychron ctrl ctrl-keygray">
+        <div id="ControlLeft" class="ctrl-inner-gray">
+          <span id="ControlLeft" class="keyboard-text">ctrl</span>
+        </div>
+      </button>
+      <button type="button" id="MetaLeft" (click)="KeyboardOnclick($event.target)" class="keychron ctrl ctrl-keygray">
+        <div id="MetaLeft" class="ctrl-inner-gray">
+          <span id="MetaLeft" class="keyboard-text">
+            <i class="fa-brands fa-windows fa-lg mt-2"></i>
+          </span>
+        </div>
+      </button>
+      <button type="button" id="AltLeft" (click)="KeyboardOnclick($event.target)" class="keychron ctrl ctrl-keygray">
+        <div id="AltLeft" class="ctrl-inner-gray">
+          <span id="AltLeft" class="keyboard-text">alt</span>
+        </div>
+      </button>
+      <button type="button" id="Space" name=" " value=" " (click)="KeyboardOnclick($event.target)"
+        class="keychron space space-keywhite">
+        <div id="Space" class="space-inner-white"></div>
+      </button>
+      <button type="button" id="AltRight" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="AltRight" class="keycaps-inner-gray">
+          <span id="AltRight" class="keyboard-text">alt</span>
+        </div>
+      </button>
+      <button type="button" id="fn" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="fn" class="keycaps-inner-gray">
+          <span id="fn" class="keyboard-text">fn</span>
+        </div>
+      </button>
+      <button type="button" id="ControlRight" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keygray">
+        <div id="ControlRight" class="keycaps-inner-gray">
+          <span id="ControlRight" class="keyboard-text">ctrl</span>
+        </div>
+      </button>
+      <button type="button" id="ArrowLeft" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="ArrowLeft" class="keycaps-inner-white">
+          <span id="ArrowLeft" class="keyboard-text">ᐸ</span>
+        </div>
+      </button>
+      <button type="button" id="ArrowDown" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="ArrowDown" class="keycaps-inner-white">
+          <span id="ArrowDown" class="keyboard-text">⋁</span>
+        </div>
+      </button>
+      <button type="button" id="ArrowRight" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keywhite">
+        <div id="ArrowRight" class="keycaps-inner-white">
+          <span id="ArrowRight" class="keyboard-text">ᐳ</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <div #about id="about"></div>
+  <div class="introduce row">
+    <div class="col-md-12 subject">
+      ข้อมูลแนะนำตัว
+    </div>
+    <div class="col-xl-6 py-3 description">
+      สวัสดี ผมชื่อศาศวัต ทรัพย์สินโยธิน ชื่อเล่นอ้น อายุ25ปี ผมเป็นนักพัฒนาระบบที่มีความเชี่ยวชาญทั้งในด้าน
+      Front-End และ Back-End สามารถวิเคราะห์ข้อมูลและวางแผนจัดการปัญหาได้ในระยะเวลาอันสั้น
+      ผมเป็นคนหนึ่งที่มีความสนใจในการเขียนโปรแกรมเป็นอย่างมากโดยเส้นทางการเป็น Full Stack Developer
+      ของผมเริ่มจากความหลงไหลและชื่นชอบในคอมพิวเตอร์และการเขียนโปรแกรม
+      ผมเป็นคนที่มักจะคอยศึกษาเทคโนโลยีใหม่ๆเพื่อนำมาประยุกต์ใช้กับผลงานอยู่เสมอซึ่งผมไม่เคยเบื่อกับการทำสิ่งเหล่านี้
+      เพราะการได้สร้างสรรค์ผลงานใหม่ๆนั้นคือความสุขของผม
+    </div>
+    <div class="col-xl-6 about-img">
+      <img src="assets/img/Aon.jpg" draggable="false" alt="" class="responsive-img">
+    </div>
+  </div>
+
+  <div #project id="project"></div>
+  <div class="introduce row">
+    <div class="col-md-12 mt-2 subject">
+      ผลงานที่เคยพัฒนา
+    </div>
+    <div class="row project align-items-center mt-3">
+      <div class="col-md-3 py-3">
+        <img src="assets/img/etda_logo.png" class="project-logo" (click)="goto('https://www.etda.or.th/th/')" alt=""
+          draggable="false">
+      </div>
+      <div class="col-md-8 py-3 px-4">
+        <div class="row py-2">ETDA</div>
+        <div class="row">พัฒนาเว็บให้กับสำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์ ซึ่งเป็นเว็บที่ให้บริการเกี่ยวกับการพัฒนา
+          ส่งเสริม
+          และสนับสนุนการทำธุรกรรมทางอิเล็กทรอนิกส์แก่หน่วยงานภาครัฐ</div>
+      </div>
+    </div>
+    <div class="row project align-items-center mt-3">
+      <div class="col-md-3 py-3">
+        <img src="assets/img/mean-stack_logo.png" class="project-logo"
+          (click)="goto('https://mean-stack-aon.herokuapp.com/')" alt="" draggable="false">
+      </div>
+      <div class="col-md-8 py-3 px-4">
+        <div class="row py-2">MEAN Stack</div>
+        <div class="row">พัฒนาเว็บแอบพลิเคชันเพื่อทดสอบการทำงานของ Full stack web deploy ที่พัฒนาด้วยเทคโนโลยี MEAN
+          Stack</div>
+      </div>
+    </div>
+    <div class="row project align-items-center mt-3">
+      <div class="col-md-3 py-3">
+        <img src="assets/img/portfolio_logo.png" class="project-logo" (click)="scrollToTop()" alt="" draggable="false">
+      </div>
+      <div class="col-md-8 py-3 px-4">
+        <div class="row py-2">Portfolio</div>
+        <div class="row">เป็นเว็บไซต์ Portfolio สำหรับแสดงผลงาน ประสบการณ์และทักษะในการพัฒนาระบบ
+          เพื่อให้ผู้เยี่ยมชมสามารถรู้จักและเข้าใจถึงตัวตนของผมได้มากยิ่งขึ้น</div>
+      </div>
+    </div>
+  </div>
+
+  <div #skill id="skill" class="mt-10"></div>
+  <div class="introduce row">
+    <div class="col-md-12 d-flex justify-content-center mb-4 subject">
+      ภาษาและแอปพลิเคชันที่ใช้งานเป็นหลัก
+    </div>
+    <div class="col-md-6 mt-2 description">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 d-flex justify-content-center mb-5 skill-subject">
+          ภาษาและเฟรมเวิร์ค
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/angular_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Angular
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/nodejs_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              NodeJS
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/typescript_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Typescript
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/html_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              HTML
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/css_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              CSS
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/js_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Javascript
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/bootstrap-stack.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Bootstrap
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/SQL_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              SQL
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/mongo_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Mongoose
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-2 ml-5 description">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 d-flex justify-content-center mb-5 skill-subject">
+          แอปพลิเคชันที่ใช้พัฒนา
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/vscode_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              VS Code
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/postman_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Postman
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/github_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Github
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/postgres_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              PostgreSQL
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/compass_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Compass
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/gitlab_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Gitlab
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/aws_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              AWS
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/android_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Android Studio
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/filezilla_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Filezilla
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div #experience id="experience"></div>
+  <div class="introduce row">
+    <div class="col-md-12 mb-2 subject">
+      ประสบการณ์
+    </div>
+    <div class="row experience align-items-center py-4">
+      <div class="col-md-3">
+        <img src="assets/img/nt_logo.png" id="nt-logo" (click)="goto('https://www.ntplc.co.th/')" alt=""
+          draggable="false">
+      </div>
+      <div class="col-md-8 px-4">
+        <div class="row">ปี2563 - ปัจจุบัน</div>
+        <div class="row">ทำงานในตำแหน่ง Full stack developer ที่บริษัทโทรคมนาคมแห่งชาติ (สำนักงานใหญ่)</div>
+      </div>
+    </div>
+    <div class="row experience align-items-center py-4">
+      <div class="col-md-3">
+        <img src="assets/img/rmutt_logo.png" id="rmutt-logo" (click)="goto('https://www.rmutt.ac.th/')" alt=""
+          draggable="false">
+      </div>
+      <div class="col-md-8 px-4">
+        <div class="row">ปี2560 - 2563</div>
+        <div class="row">ศึกษาระดับปริญาตรีในคณะวิศวกรรมศาสตร์ ภาควิชาวิศวกรรมคอมพิวเตอร์
+          มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</div>
+      </div>
+    </div>
+  </div>
+
+  <div #contact id="contact" class="contact mt-5"></div>
+    <div class="row mt-10">
+      <h1>ติดต่อเรา</h1>
+    </div>
+    <div class="row">
+      <h4 style="text-align:center">ท่านสามารถติดต่อเพื่อสอบถามรายละเอียดเพิ่มเติมที่นี่</h4>
+    </div>
+    <form [formGroup]="contactForm" (ngSubmit)="contact_us()">
+    <div class="row input-container">
+      <div class="col-xs-12">
+        <div class="styled-input wide">
+          <input class="contact-input" (click)="computerStart = false" formControlName="name" type="text"
+          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.name.errors }" required>
+          <label>ชื่อ นามสกุล</label>
+        </div>
+        <div class="col" *ngIf="contactForm_submit && contact_Form.name.errors">
+          <div *ngIf="contact_Form.name.errors.required" class="text-danger">* กรุณาระบุชื่อ - นามสกุล</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="styled-input">
+          <input class="contact-input" (click)="computerStart = false" formControlName="email" type="text"
+          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.email.errors }" required>
+          <label>อีเมล</label>
+        </div>
+        <div class="row" *ngIf="contactForm_submit && contact_Form.email.errors">
+          <div *ngIf="contact_Form.email.errors.required" class="text-danger">* กรุณาระบุอีเมล</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="styled-input" style="float:right;">
+          <input class="contact-input" (click)="computerStart = false" formControlName="tel" type="text"
+          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.tel.errors }" required>
+          <label>เบอร์โทรศัพท์</label>
+        </div>
+        <div class="row" *ngIf="contactForm_submit && contact_Form.tel.errors">
+          <div *ngIf="contact_Form.tel.errors.required" class="text-danger">* กรุณาระบุหมายเลขโทรศัพท์</div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="styled-input wide">
+          <textarea (click)="computerStart = false" formControlName="description"
+          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.description.errors }" required></textarea>
+          <label>รายละเอียด</label>
+        </div>
+        <div class="col mb-5" *ngIf="contactForm_submit && contact_Form.description.errors">
+          <div *ngIf="contact_Form.description.errors.required" class="text-danger">* กรุณาระบุรายละเอียด</div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 full-bg">
+        <input class="btn-lrg submit-btn" type="submit" value="ส่งข้อความ">
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col test"></div>
   </div>
 
 </div>

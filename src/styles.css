@@ -1,1 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+
+.swal2-popup {
+  font-family: 'kanit' !important;
+}
