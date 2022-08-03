@@ -57,6 +57,17 @@
   }
 }
 
+@keyframes loopCursor {
+  0% {
+    background-color: #00ff00;
+    color: #222;
+}
+50% {
+    background-color: transparent;
+    color: #00ff00;
+}
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0.4;
@@ -96,8 +107,19 @@
   font-family: 'consola';
   line-height: 1.2;
   margin-right: 5px;
-  font-size: medium;
+  font-size: 16px;
   animation: flicker 0.3s;
+}
+
+#cursor {
+  font-family: 'consola';
+  line-height: 1.2;
+  margin-left: 0.5%;
+  font-size: 16px;
+  width: 2.1%;
+  height: 0;
+  padding-bottom: 3.4%;
+  animation: loopCursor 1.5s step-end infinite, flicker 0.3s;
 }
 
 .unprompt {
@@ -105,11 +127,12 @@
   font-family: 'consola';
   line-height: 1.2;
   margin-right: 5px;
-  font-size: medium;
+  font-size: 16px;
 }
 
 .inputContainer {
-  flex: 1
+  flex: 1;
+  position: relative;
 }
 
 .input {
@@ -118,11 +141,13 @@
   margin: 0;
   background: #222;
   color: #00fe00;
-  width: 100%;
+  width: 400px;
   font-family: 'consola';
-  font-size: medium;
+  font-size: 16px;
   margin-left: 4px;
   animation: flicker 0.3s;
+  position: absolute;
+  top: 0;
 }
 
 .input:focus {
@@ -131,22 +156,24 @@
 
 .screens {
   background-color: #222;
-  height: 100%;
   width: 100%;
+  height: 0;
+  padding-bottom: 72.5%;
   border-radius: 30px;
   display: flex;
-  padding-top: 20px;
-  padding-left: 10px;
+  padding-top: 3%;
+  padding-left: 3%;
   animation: flicker 0.3s;
   box-shadow: 0 0 20px 10px #2B3030 inset;
 }
 
-
-
 .computer {
   display: block;
-  width: 680px;
-  height: 950px;
+  /* width: 680px;
+  height: 950px; */
+  width: 55%;
+  height: 0;
+  padding-bottom: 77%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
@@ -158,7 +185,9 @@
   z-index: 2;
   display: block;
   width: 100%;
-  height: 820px;
+  /* height: 820px; */
+  height: 0;
+  padding-bottom: 121%;
   border-radius: 30px;
   background-color: #DDDBC2;
   position: absolute;
@@ -170,12 +199,13 @@
 
 .monitor-inner {
   display: block;
-  width: 640px;
-  height: 720px;
+  width: 94%;
+  height: 0;
+  padding-bottom: 108%;
   background-image: linear-gradient(#CAC6A9, #CFCEB0);
   margin: auto;
   position: absolute;
-  top: 44px;
+  top: 6%;
   left: 0;
   right: 0;
   border-radius: 10px;
@@ -183,14 +213,15 @@
 
 .screen-cutout {
   display: block;
-  width: 560px;
-  height: 450px;
+  width: 88%;
+  height: 0;
+  padding-bottom: 70%;
   background-color: #DDDBC2;
   margin: auto;
   position: absolute;
   left: 0;
   right: 0;
-  top: 40px;
+  top: 6%;
   border-radius: 10px;
   background-image: linear-gradient(#938F6A, #E0DFC3);
   background-image: conic-gradient(#938F6A 12.5%, #B5B293 15.5% 33%, #E0DFC3 34% 65.5%, #C2C1A2 66.5% 83.5%, #938F6A 86.5%);
@@ -198,13 +229,14 @@
 
 .screen {
   display: block;
-  width: 520px;
-  height: 390px;
+  width: 93%;
+  height: 0;
+  padding-bottom: 70%;
   background-color: #222;
   /* background-image: radial-gradient(#525B5A, #50585A); */
   margin: auto;
   position: absolute;
-  top: 20px;
+  top: 4%;
   left: 0;
   right: 0;
   border-radius: 30px;
@@ -214,8 +246,9 @@
 .fadeIn {
   animation: fadeIn 0.2s;
   display: block;
-  width: 520px;
-  height: 390px;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75.5%;
   background-color: #4F5555;
   background-image: radial-gradient(#525B5A, #50585A);
   margin: auto;
@@ -228,51 +261,50 @@
 
 .logo {
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 7%;
+  height: 0;
+  padding-bottom: 7%;
   background-image: radial-gradient(#C9C6B5, #CBC9BA);
   border-radius: 4px;
   position: absolute;
-  left: 44px;
-  bottom: 44px;
+  left: 7%;
+  bottom: 5%;
   padding-left: 3.5px;
   box-shadow: 0 0 2px 0px #979181 inset;
 }
 
-.logo p {
-  text-align: center;
-  margin-top: -2px;
-}
-
 .opening {
   display: block;
-  width: 310px;
-  height: 30px;
+  width: 49%;
+  height: 0;
+  padding-bottom: 4.8%;
   background-image: linear-gradient(#BEBB9C, #CAC8A7 74.5% 75.5%);
   background-image: conic-gradient(#BEBB9C 0% 23.5%, #C7C2A2 24.5% 25%, #DCD8BD 26% 73.5%, #CAC8A7 74.5% 75.5%, #BEBB9C 76.5%);
   position: absolute;
-  bottom: 110px;
-  right: 42px;
+  bottom: 17%;
+  right: 7%;
   border-radius: 4px;
 }
 
 .opening-inner {
   display: block;
-  width: 252px;
-  height: 16px;
+  width: 83%;
+  height: 0;
+  padding-bottom: 5.5%;
   background-color: #181914;
   border-radius: 4px;
   margin: auto;
   position: absolute;
   left: 0;
   right: 0;
-  top: 3.5px;
+  top: 10%;
 }
 
 .foot {
   display: block;
   width: 100%;
-  height: 170px;
+  height: 0;
+  padding-bottom: 35%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -287,12 +319,13 @@
 
 .inset {
   display: inline;
-  width: 32px;
-  height: 32px;
+  width: 5%;
+  height: 0;
+  padding-bottom: 5%;
   background-color: #C3BEA0;
   position: absolute;
-  bottom: 40px;
-  left: 70px;
+  bottom: 20%;
+  left: 10%;
   border-radius: 4px;
   box-shadow: 0 0 2px #C9C3A3 inset,
     0 0px 2px 1px #BCB694;
@@ -300,12 +333,13 @@
 
 .switch-container {
   display: block;
-  width: 70px;
-  height: 70px;
+  width: 10.5%;
+  height: 0;
+  padding-bottom: 10.5%;
   background-color: #C3BEA0;
   position: absolute;
-  right: 60px;
-  bottom: 30px;
+  right: 8%;
+  bottom: 12%;
   border-radius: 6px;
   box-shadow: 1px 1px 5px 0 #000;
   cursor: pointer;
@@ -319,8 +353,8 @@
   display: block;
   cursor: pointer;
   position: absolute;
-  top: 13px;
-  left: 12px;
+  bottom: 17.2%;
+  left: 17.2%;
   border-radius: 6px;
   /* filter: drop-shadow(0px 0px 6px #2bff00);
   text-shadow: -1px 0 #27e001, 0 1px #27e001, 1px 0 #27e001, 0 -1px #27e001;
@@ -328,14 +362,14 @@
 
   color: #70ff70;
   text-shadow:
-      0 0 7px #60ff60,
-      0 0 10px #60ff60,
-      0 0 21px #60ff60,
-      0 0 42px #00ff00,
-      0 0 82px #00ff00,
-      0 0 92px #00ff00,
-      0 0 102px #00ff00,
-      0 0 151px #00ff00;
+    0 0 7px #60ff60,
+    0 0 10px #60ff60,
+    0 0 21px #60ff60,
+    0 0 42px #00ff00,
+    0 0 82px #00ff00,
+    0 0 92px #00ff00,
+    0 0 102px #00ff00,
+    0 0 151px #00ff00;
   animation: fadeIn 1s;
 }
 
@@ -343,8 +377,8 @@
   display: block;
   cursor: pointer;
   position: absolute;
-  top: 13px;
-  left: 12px;
+  bottom: 17.2%;
+  left: 17.2%;
   border-radius: 6px;
   color: #acacac;
 }
@@ -387,8 +421,8 @@ br {
 }
 
 .keychron:not(:last-of-type) {
-  margin-bottom: 4px;
-  margin-right: 4px;
+  /* margin-bottom: 4px; */
+  margin-right: 0.3%;
 }
 
 .keychron:active {
@@ -454,11 +488,74 @@ br {
   box-shadow: 20px 20px 45px rgba(0, 0, 0, 0.6), 0 0 0 0px #aaa inset;
   font-size: 36px;
   /* margin: 3em auto 0 auto; */
-  padding: 0.25em;
+  /* padding: 0.25em;
   padding-top: 20px;
-  padding-left: 30px;
-  width: 34.65em;
-  height: 13.7em;
+  padding-left: 30px; */
+  /* width: 34.65em;
+  height: 13.7em; */
+  width: 100%;
+  padding-top: 40%;
+  position: relative;
+}
+
+.key-first-row {
+  position: absolute;
+  top: 4%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.key-second-row {
+  position: absolute;
+  top: 19.5%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.key-third-row {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.key-fourth-row {
+  position: absolute;
+  top: 50.5%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.key-fifth-row {
+  position: absolute;
+  top: 66%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.key-six-row {
+  position: absolute;
+  top: 81.5%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .keyboard-text {
@@ -488,15 +585,18 @@ br {
 }
 
 .keycaps {
-  width: 2em;
-  height: 2em;
+  width: 5.8%;
+  padding-bottom: 5.8%;
+  height: 0;
   z-index: 2;
   display: block;
+  position: relative;
 }
 
 .keycaps-inner-red {
-  width: 1.5em;
-  height: 1.5em;
+  width: 76%;
+  height: 0;
+  padding-bottom: 76%;
   background-color: #b43434;
   position: absolute;
   top: 13%;
@@ -505,8 +605,9 @@ br {
 }
 
 .keycaps-inner-gray {
-  width: 1.5em;
-  height: 1.5em;
+  width: 76%;
+  height: 0;
+  padding-bottom: 76%;
   background-color: #63676b;
   position: absolute;
   top: 13%;
@@ -515,8 +616,9 @@ br {
 }
 
 .keycaps-inner-white {
-  width: 1.5em;
-  height: 1.5em;
+  width: 76%;
+  height: 0;
+  padding-bottom: 76%;
   background-color: #eee;
   position: absolute;
   top: 13%;
@@ -525,118 +627,158 @@ br {
 }
 
 .backspace {
-  width: 4.12em;
-  height: 2em;
+  width: 11.9%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .backspace-inner-gray {
-  width: 3.52em;
-  height: 1.5em;
+  width: 87.5%;
+  height: 0;
+  padding-bottom: 38%;
   background-color: #63676b;
   position: absolute;
-  top: 13%;
-  left: 7%;
+  top: 12%;
+  left: 6%;
   border-radius: 5px;
 }
 
 .tab {
-  width: 3.06em;
-  height: 2em;
+  width: 8.85%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .tab-inner-gray {
-  width: 2.5em;
-  height: 1.5em;
+  width: 84.5%;
+  height: 0;
+  padding-bottom: 52%;
   background-color: #63676b;
   position: absolute;
-  top: 13%;
-  left: 9%;
+  top: 11%;
+  left: 7.5%;
   border-radius: 5px;
 }
 
 .capslock {
-  width: 3.47em;
-  height: 2em;
+  width: 10%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .capslock-inner-gray {
-  width: 2.91em;
-  height: 1.5em;
+  width: 87%;
+  height: 0;
+  padding-bottom: 46%;
   background-color: #63676b;
   position: absolute;
-  top: 13%;
-  left: 9%;
+  top: 11%;
+  left: 7%;
   border-radius: 5px;
 }
 
 .enter {
-  width: 4.77em;
-  height: 2em;
+  width: 13.75%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .enter-inner-gray {
-  width: 4.2em;
-  height: 1.5em;
+  width: 88.9%;
+  height: 0;
+  padding-bottom: 32.8%;
   background-color: #63676b;
   position: absolute;
-  top: 14%;
+  top: 12.5%;
   left: 6%;
   border-radius: 5px;
 }
 
 .lshift {
-  width: 4.47em;
-  height: 2em;
+  width: 12.8%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .lshift-inner-gray {
-  width: 3.9em;
-  height: 1.5em;
+  width: 89%;
+  height: 0;
+  padding-bottom: 35.7%;
   background-color: #63676b;
   position: absolute;
-  top: 13%;
-  left: 7%;
+  top: 12%;
+  left: 6%;
   border-radius: 5px;
 }
 
 .rshift {
-  width: 3.75em;
-  height: 2em;
+  width: 11%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .rshift-inner-gray {
-  width: 3.2em;
-  height: 1.5em;
+  width: 87%;
+  height: 0;
+  padding-bottom: 40.8%;
   background-color: #63676b;
   position: absolute;
-  top: 13%;
-  left: 8%;
+  top: 12.3%;
+  left: 7%;
   border-radius: 5px;
 }
 
 .ctrl {
-  width: 2.46em;
-  height: 2em;
+  width: 7.1%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .ctrl-inner-gray {
-  width: 1.91em;
-  height: 1.5em;
+  width: 80.5%;
+  height: 0;
+  padding-bottom: 64%;
   background-color: #63676b;
   position: absolute;
-  top: 13%;
-  left: 11%;
+  top: 12%;
+  left: 10%;
   border-radius: 5px;
 }
 
 .space {
-  width: 13.28em;
-  height: 2em;
+  width: 38.5%;
+  padding-bottom: 5.8%;
+  height: 0;
+  z-index: 2;
+  display: block;
+  position: relative;
 }
 
 .space-inner-white {
-  width: 13em;
-  height: 1.5em;
+  width: 98%;
+  height: 0;
+  padding-bottom: 11.6%;
   background-color: #eeeeee;
   position: absolute;
   top: 13%;
@@ -720,7 +862,8 @@ br {
 
 .description {
   font-size: calc(60% + 1.1vmin);
-  line-height: calc(60% + 2.4vmin);;
+  line-height: calc(60% + 2.4vmin);
+  ;
 }
 
 .center {
@@ -795,7 +938,10 @@ h4 {
 
 /* ///// inputs /////*/
 
-.contact-input:focus ~ label, textarea:focus ~ label, .contact-input:valid ~ label, textarea:valid ~ label {
+.contact-input:focus~label,
+textarea:focus~label,
+.contact-input:valid~label,
+textarea:valid~label {
   font-size: 0.75em;
   color: #999;
   top: -5px;
@@ -812,9 +958,9 @@ h4 {
   /* font-family: 'kanit'; */
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   .styled-input {
-      width:100%;
+    width: 100%;
   }
 }
 
@@ -846,10 +992,12 @@ textarea {
 }
 
 .contact-input:focus,
-textarea:focus { outline: 0; }
+textarea:focus {
+  outline: 0;
+}
 
-.contact-input:focus ~ span,
-textarea:focus ~ span {
+.contact-input:focus~span,
+textarea:focus~span {
   width: 100%;
   -webkit-transition: all 0.075s ease;
   transition: all 0.075s ease;
@@ -876,33 +1024,122 @@ textarea {
   color: rgb(209, 209, 209);
   font-size: 18px;
   cursor: pointer;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
-            0 2px 10px 0 rgba(0,0,0,0.07);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06),
+    0 2px 10px 0 rgba(0, 0, 0, 0.07);
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
 .submit-btn:hover {
   transform: translateY(1px);
-  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
-            0 1px 1px 0 rgba(0,0,0,0.09);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.10),
+    0 1px 1px 0 rgba(0, 0, 0, 0.09);
 }
 
 .text-danger {
   font-family: 'kanit';
 }
 
-.test {
-  background-color: red;
-  position: relative;
-  width: 100%;
-  padding-top: 40%; /* 4:3 Aspect Ratio */
-}
-
 @media (max-width: 768px) {
   .submit-btn {
-      width:100%;
-      float: none;
-      text-align:center;
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1399px) {
+  .keyboard-text {
+    font-size: 14px;
+  }
+
+  .keyboard-text-tone-mark {
+    font-size: 12px;
+  }
+
+  .power-on {
+    font-size: 41px;
+  }
+
+  .power-off {
+    font-size: 41px;
+  }
+
+  .prompt {
+    font-size: 14px;
+  }
+
+  .unprompt {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 14px;
+    width: 300px;
+    margin-left: 3px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .keyboard-text {
+    font-size: 12px;
+  }
+
+  .keyboard-text-tone-mark {
+    font-size: 10px;
+  }
+
+  .power-on {
+    font-size: 34px;
+  }
+
+  .power-off {
+    font-size: 34px;
+  }
+
+  .prompt {
+    font-size: 11px;
+  }
+
+  .unprompt {
+    font-size: 11px;
+  }
+
+  .input {
+    font-size: 11px;
+    width: 250px;
+    margin-left: 1px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .keyboard-text {
+    font-size: 6px;
+  }
+
+  .keyboard-text-tone-mark {
+    font-size: 6px;
+  }
+
+  .power-on {
+    font-size: 25px;
+  }
+
+  .power-off {
+    font-size: 25px;
+  }
+
+  .prompt {
+    font-size: 1px;
+  }
+
+  .unprompt {
+    font-size: 1px;
+  }
+
+  .input {
+    font-size: 1px;
+    width: 200px;
+    margin-left: 0.5px;
   }
 }

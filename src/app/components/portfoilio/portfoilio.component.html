@@ -12,8 +12,8 @@
       โดยผมได้เตรียมคอมพิวเตอร์และคีย์บอร์ดไว้ด้านล่างเพื่อให้ท่านสามารถใช้เป็นทางลัดในการดูข้อมูลที่ท่านสนใจได้สะดวกมากยิ่งขึ้น
     </div>
   </div>
-  <!-- <div #computer class="computer d-flex justify-content-center mt-10" aria-label="1984 Macintosh illustration"
-    id="computer">
+
+  <div *ngIf="innerWidth >= 767" #computer class="computer d-flex justify-content-center mt-10" id="computer">
     <div class="monitor">
       <div class="monitor-inner">
         <div class="screen-cutout">
@@ -27,7 +27,8 @@
                 <div class="currentLine">
                   <span class="{{prompt}}">$</span>
                   <div class="inputContainer">
-                    <input class="input" spellcheck="false" type="text" value="{{terminalInput}}" disabled />
+                    <!-- <input class="input" spellcheck="false" type="text" value="{{terminalInput}}" disabled /> -->
+                    <span class="input align-items-center">{{terminalInput}}<canvas id="cursor"></canvas></span>
                   </div>
                 </div>
               </div>
@@ -49,11 +50,11 @@
         <i *ngIf="!computerStart" class="fa-solid fa-power-off fa-3x power-off"></i>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div #keyboard id="keyboard"></div>
-  <div class="keyboard mt-10" ontouchstart="">
-    <div class="row">
+  <div *ngIf="innerWidth >= 767" class="keyboard mt-10" ontouchstart="">
+    <div class="row key-first-row justify-content-center">
       <button type="button" id="Escape" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keyred">
         <div id="Escape" class="keycaps-inner-red">
           <span id="Escape" class="keyboard-text">hello.</span>
@@ -140,7 +141,7 @@
         </div>
       </button>
     </div>
-    <div class="row">
+    <div class="row key-second-row justify-content-center">
       <button type="button" id="Backquote" name="~" value="`" (click)="KeyboardOnclick($event.target)"
         class="keychron keycaps keygray">
         <div id="Backquote" class="keycaps-inner-gray">
@@ -231,7 +232,7 @@
         </div>
       </button>
     </div>
-    <div class="row">
+    <div class="row key-third-row justify-content-center">
       <button type="button" id="Tab" name="  " value="  " (click)="KeyboardOnclick($event.target)"
         class="keychron tab tab-keygray">
         <div id="Tab" class="tab-inner-gray">
@@ -322,7 +323,7 @@
         </div>
       </button>
     </div>
-    <div class="row">
+    <div class="row key-fourth-row justify-content-center">
       <button type="button" id="CapsLock" (click)="KeyboardOnclick($event.target)"
         class="keychron capslock capslock-keygray">
         <div id="CapsLock" class="capslock-inner-gray">
@@ -407,7 +408,7 @@
         </div>
       </button>
     </div>
-    <div class="row">
+    <div class="row key-fifth-row justify-content-center">
       <button type="button" id="ShiftLeft" (click)="KeyboardOnclick($event.target)"
         class="keychron lshift lshift-keygray">
         <div id="ShiftLeft" class="lshift-inner-gray">
@@ -491,7 +492,7 @@
         </div>
       </button>
     </div>
-    <div class="row">
+    <div class="row key-six-row justify-content-center">
       <button type="button" id="ControlLeft" (click)="KeyboardOnclick($event.target)"
         class="keychron ctrl ctrl-keygray">
         <div id="ControlLeft" class="ctrl-inner-gray">
@@ -934,9 +935,5 @@
       </div>
     </div>
   </form>
-
-  <div class="row">
-    <div class="col test"></div>
-  </div>
 
 </div>
