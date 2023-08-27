@@ -61,11 +61,12 @@
   0% {
     background-color: #00ff00;
     color: #222;
-}
-50% {
+  }
+
+  50% {
     background-color: transparent;
     color: #00ff00;
-}
+  }
 }
 
 @keyframes fadeIn {
@@ -916,6 +917,15 @@ br {
   cursor: pointer;
 }
 
+.project-click {
+  cursor: pointer;
+  color: #4e75dd;
+  transition: color 0.2s;
+}
+
+.project-click:hover {
+  color: #829ff0;
+}
 
 /* contact us */
 
