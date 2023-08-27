@@ -8,8 +8,9 @@
       ผมเป็น Full Stack Developer.
     </div>
     <div class="col-md-6 description">
-      ท่านสามารถเยี่ยมชมและทำความรู้จักกับผมได้ผ่านข้อมูลต่างๆที่ระบุไว้ใน Portfolio นี้
-      โดยผมได้เตรียมคอมพิวเตอร์และคีย์บอร์ดไว้ด้านล่างเพื่อให้ท่านสามารถใช้เป็นทางลัดในการดูข้อมูลที่ท่านสนใจได้สะดวกมากยิ่งขึ้น
+      ท่านสามารถเยี่ยมชมและทำความรู้จักกับผมได้ผ่านข้อมูลที่ระบุไว้ด้านล่างนี้
+      โดยในส่วนถัดไปจะมีคอมพิวเตอร์และคีย์บอร์ดเป็นลูกเล่นเล็กๆน้อยๆ
+      ให้ท่านได้ลองใช้งานเพื่อเพิ่มความสนุกสนานในการเยี่ยมชมมากยิ่งขึ้น
     </div>
   </div>
 
@@ -554,7 +555,7 @@
       ข้อมูลแนะนำตัว
     </div>
     <div class="col-xl-6 py-3 description">
-      สวัสดี ผมชื่อศาศวัต ทรัพย์สินโยธิน ชื่อเล่นอ้น อายุ25ปี ผมเป็นนักพัฒนาระบบที่มีความเชี่ยวชาญทั้งในด้าน
+      สวัสดี ผมชื่อศาศวัต ทรัพย์สินโยธิน ชื่อเล่นอ้น อายุ26ปี ผมเป็นนักพัฒนาระบบที่มีความเชี่ยวชาญทั้งในด้าน
       Front-End และ Back-End สามารถวิเคราะห์ข้อมูลและวางแผนจัดการปัญหาได้ในระยะเวลาอันสั้น
       ผมเป็นคนหนึ่งที่มีความสนใจในการเขียนโปรแกรมเป็นอย่างมากโดยเส้นทางการเป็น Full Stack Developer
       ของผมเริ่มจากความหลงไหลและชื่นชอบในคอมพิวเตอร์และการเขียนโปรแกรม
@@ -573,25 +574,60 @@
     </div>
     <div class="row project align-items-center mt-3">
       <div class="col-lg-3 py-3">
+        <img src="assets/img/dragon-nest-world-logo.png" class="project-logo"
+          (click)="goto('https://dragonnestcandy.com/')" alt="" draggable="false">
+      </div>
+      <div class="col-lg-8 py-3 px-4">
+        <div class="row py-2">Dragonnest Candy</div>
+        <div class="row">
+          เป็นเจ้าของเซิฟเวอร์เกม Dragonnest Candy<br>
+          ใช้เวลาว่างหลังเลิกงานกับวันหยุดในการวางระบบและพัฒนาเซิฟเวอร์เกมออนไลน์ของตัวเอง
+          โดยตัวเกมเป็นเวอร์ชัน PC มีลักษณะเกมเป็นแนว Action MMORPG
+          ที่ให้ตัวเราสามารถเก็บเลเวลและลงดันเจี้ยนเพื่อพิชิตภารกิจภายในเกมอีกทั้งยังมีระบบ PVP
+          เพื่อให้ผู้เล่นสามารถพิสูจฝีมือและระดับความแข็งแกร่งของตัวละครกับผู้เล่นคนอื่นๆได้
+        </div>
+      </div>
+    </div>
+    <div class="row project align-items-center mt-3">
+      <div class="col-lg-3 py-3">
+        <img src="assets/img/E-doc-logo.png" class="project-logo" (click)="goto('https://ntedoc.ntplc.co.th')" alt=""
+          draggable="false">
+      </div>
+      <div class="col-lg-8 py-3 px-4">
+        <div class="row py-2">NT E-Document</div>
+        <div class="row">เป็นส่วนหนึ่งในทีมพัฒนาระบบเซ็นเอกสารอิเล็กทรอนิกส์
+          โดยตัวระบบจะทำหน้าที่เสมือนเป็นตัวกลางในการสร้าง อนุมัติ
+          และรับส่งเอกสารภายในองค์กร เพื่อให้พนักงานและผู้บริหารสามารถรับส่งเอกสารได้สะดวกรวดเร็ว ลดการใช้งานกระดาษ
+          อีกทั้งยังมีความปลอดภัยด้วยระบบลายมือชื่ออิเล็กทรอนิกส์(CA)
+          เพื่อระบุตัวตนของผู้เซ็นเอกสารลงบนเอกสารอิเล็กทรอนิกส์</div>
+      </div>
+    </div>
+    <div class="row project align-items-center mt-3">
+      <div class="col-lg-3 py-3">
+        <img src="assets/img/nt-pao.png" class="project-logo" (click)="goto('https://master-digital.fyzz.me/')" alt=""
+          draggable="false">
+      </div>
+      <div class="col-lg-8 py-3 px-4">
+        <div class="row py-2">NT Pao</div>
+        <div class="row">เป็นส่วนหนึ่งในทีมพัฒนาโครงการ DIGITAL PAO BY NTPLC
+          ซึ่งเป็นโครงการที่รวบรวมระบบบริหารการจัดการข้อมูลภายในองค์กร ไม่ว่าจะเป็น ระบบบริหารการจองรถยนต์
+          ระบบบริหารการจองห้องประชุม ระบบบริหารเงินเดือนพนักงาน หรือ ระบบสารบรรณอิเล็กทรอนิกส์
+          โดยมีส่วนร่วมในการพัฒนาระบบทั้งหมดภายในโครงการ
+        </div>
+      </div>
+    </div>
+    <div class="row project align-items-center mt-3">
+      <div class="col-lg-3 py-3">
         <img src="assets/img/etda_logo.png" class="project-logo" (click)="goto('https://www.etda.or.th/th/')" alt=""
           draggable="false">
       </div>
       <div class="col-lg-8 py-3 px-4">
         <div class="row py-2">ETDA</div>
-        <div class="row">พัฒนาเว็บให้กับสำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์ ซึ่งเป็นเว็บที่ให้บริการเกี่ยวกับการพัฒนา
-          ส่งเสริม
-          และสนับสนุนการทำธุรกรรมทางอิเล็กทรอนิกส์แก่หน่วยงานภาครัฐ</div>
-      </div>
-    </div>
-    <div class="row project align-items-center mt-3">
-      <div class="col-lg-3 py-3">
-        <img src="assets/img/mean-stack_logo.png" class="project-logo"
-          (click)="goto('https://mean-stack-aon.herokuapp.com/')" alt="" draggable="false">
-      </div>
-      <div class="col-lg-8 py-3 px-4">
-        <div class="row py-2">MEAN Stack</div>
-        <div class="row">พัฒนาเว็บแอบพลิเคชันเพื่อทดสอบการทำงานของ Full stack web deploy ที่พัฒนาด้วยเทคโนโลยี MEAN
-          Stack</div>
+        <div class="row">มี่สวนช่วยในการพัฒนาระบบจัดการหน้าเว็บให้กับสำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์
+          ซึ่งเป็นเว็บที่ให้บริการเกี่ยวกับการพัฒนา
+          ส่งเสริมและสนับสนุนการทำธุรกรรมทางอิเล็กทรอนิกส์แก่หน่วยงานภาครัฐ
+          โดยตัวระบบสามารถใช้จัดการคอนเทนต์ต่างๆบนหน้าเว็บเพื่อให้ผู้ดูแลระบบควมคุมดูแลการแสดงผลบนหน้าเว็บได้อย่างมีประสิทธิภาพ
+        </div>
       </div>
     </div>
     <div class="row project align-items-center mt-3">
@@ -612,7 +648,7 @@
       ภาษาและแอปพลิเคชันที่ใช้งานเป็นหลัก
     </div>
     <div class="col-md-6 mt-2 description">
-      <div class="row d-flex justify-content-center">
+      <div class="row d-flex justify-content-start">
         <div class="col-md-12 d-flex justify-content-center mb-5 skill-subject">
           ภาษาและเฟรมเวิร์ค
         </div>
@@ -625,6 +661,30 @@
           <div class="row">
             <div class="col d-flex justify-content-center">
               Angular
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/react-logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              React
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/Golang.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Golang
             </div>
           </div>
         </div>
@@ -652,8 +712,18 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row d-flex justify-content-center">
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/js_logo.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              Javascript
+            </div>
+          </div>
+        </div>
         <div class="col-xl-4 mb-4">
           <div class="row">
             <div class="col d-flex justify-content-center">
@@ -678,20 +748,6 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-4 mb-4">
-          <div class="row">
-            <div class="col d-flex justify-content-center">
-              <img src="assets/img/js_logo.png" class="skill-logo" alt="" draggable="false">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col d-flex justify-content-center">
-              Javascript
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-center">
         <div class="col-xl-4 mb-4">
           <div class="row">
             <div class="col d-flex justify-content-center">
@@ -732,7 +788,7 @@
     </div>
 
     <div class="col-md-6 mt-2 ml-5 description">
-      <div class="row d-flex justify-content-center">
+      <div class="row d-flex justify-content-start">
         <div class="col-md-12 d-flex justify-content-center mb-5 skill-subject">
           แอปพลิเคชันที่ใช้พัฒนา
         </div>
@@ -772,8 +828,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row d-flex justify-content-center">
         <div class="col-xl-4 mb-4">
           <div class="row">
             <div class="col d-flex justify-content-center">
@@ -810,17 +864,15 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row d-flex justify-content-center">
         <div class="col-xl-4 mb-4">
           <div class="row">
             <div class="col d-flex justify-content-center">
-              <img src="assets/img/aws_logo.png" class="skill-logo" alt="" draggable="false">
+              <img src="assets/img/sql-server.png" class="skill-logo" alt="" draggable="false">
             </div>
           </div>
           <div class="row">
             <div class="col d-flex justify-content-center">
-              AWS
+              SSMS
             </div>
           </div>
         </div>
@@ -845,6 +897,30 @@
           <div class="row">
             <div class="col d-flex justify-content-center">
               Filezilla
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/pm2.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              PM2
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 mb-4">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <img src="assets/img/Nginx.png" class="skill-logo" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              NGINX
             </div>
           </div>
         </div>
@@ -881,18 +957,18 @@
   </div>
 
   <div #contact id="contact" class="contact mt-5"></div>
-    <div class="row mt-10">
-      <h1>ติดต่อเรา</h1>
-    </div>
-    <div class="row">
-      <h4 style="text-align:center">ท่านสามารถติดต่อเพื่อสอบถามรายละเอียดเพิ่มเติมที่นี่</h4>
-    </div>
-    <form [formGroup]="contactForm" (ngSubmit)="contact_us()">
+  <div class="row mt-10">
+    <h1>ติดต่อเรา</h1>
+  </div>
+  <div class="row">
+    <h4 style="text-align:center">ท่านสามารถติดต่อเพื่อสอบถามรายละเอียดเพิ่มเติมที่นี่</h4>
+  </div>
+  <form [formGroup]="contactForm" (ngSubmit)="contact_us()">
     <div class="row input-container">
       <div class="col-xs-12">
         <div class="styled-input wide">
           <input class="contact-input" (click)="computerStart = false" formControlName="name" type="text"
-          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.name.errors }" required>
+            [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.name.errors }" required>
           <label>ชื่อ นามสกุล</label>
         </div>
         <div class="col" *ngIf="contactForm_submit && contact_Form.name.errors">
@@ -902,7 +978,7 @@
       <div class="col-md-6 col-sm-12">
         <div class="styled-input">
           <input class="contact-input" (click)="computerStart = false" formControlName="email" type="text"
-          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.email.errors }" required>
+            [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.email.errors }" required>
           <label>อีเมล</label>
         </div>
         <div class="row" *ngIf="contactForm_submit && contact_Form.email.errors">
@@ -912,7 +988,7 @@
       <div class="col-md-6 col-sm-12">
         <div class="styled-input" style="float:right;">
           <input class="contact-input" (click)="computerStart = false" formControlName="tel" type="text"
-          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.tel.errors }" required>
+            [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.tel.errors }" required>
           <label>เบอร์โทรศัพท์</label>
         </div>
         <div class="row" *ngIf="contactForm_submit && contact_Form.tel.errors">
@@ -922,7 +998,7 @@
       <div class="col-xs-12">
         <div class="styled-input wide">
           <textarea (click)="computerStart = false" formControlName="description"
-          [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.description.errors }" required></textarea>
+            [ngClass]="{ 'is-invalid': contactForm_submit && contact_Form.description.errors }" required></textarea>
           <label>รายละเอียด</label>
         </div>
         <div class="col mb-5" *ngIf="contactForm_submit && contact_Form.description.errors">
