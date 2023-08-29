@@ -8,9 +8,13 @@
       ผมเป็น Full Stack Developer.
     </div>
     <div class="col-md-6 description">
-      ท่านสามารถเยี่ยมชมและทำความรู้จักกับผมได้ผ่านข้อมูลที่ระบุไว้ด้านล่างนี้
-      โดยในส่วนถัดไปจะมีคอมพิวเตอร์และคีย์บอร์ดเป็นลูกเล่นเล็กๆน้อยๆ
-      ให้ท่านได้ลองใช้งานเพื่อเพิ่มความสนุกสนานในการเยี่ยมชมมากยิ่งขึ้น
+      <p>
+        ท่านสามารถเยี่ยมชมและทำความรู้จักกับผมได้ผ่านข้อมูลที่ระบุไว้ด้านล่างนี้
+        <span *ngIf="innerWidth >= 767">
+          โดยในส่วนถัดไปจะมีคอมพิวเตอร์และคีย์บอร์ดเป็นลูกเล่นเล็กๆน้อยๆ
+          ให้ท่านได้ลองใช้งานเพื่อเพิ่มความสนุกสนานในการเยี่ยมชมมากยิ่งขึ้น
+        </span>
+      </p>
     </div>
   </div>
 
@@ -53,7 +57,7 @@
     </div>
   </div>
 
-  <div #keyboard id="keyboard"></div>
+  <div *ngIf="innerWidth >= 767" #keyboard id="keyboard"></div>
   <div *ngIf="innerWidth >= 767" class="keyboard mt-10" ontouchstart="">
     <div class="row key-first-row justify-content-center">
       <button type="button" id="Escape" (click)="KeyboardOnclick($event.target)" class="keychron keycaps keyred">
